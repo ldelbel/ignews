@@ -5,7 +5,7 @@ import { query as q } from "faunadb";
 
 declare module "next-auth" {
   interface Session {
-    activeSubscription: string,
+    activeSubscription: string;
   }
 }
 
@@ -15,7 +15,7 @@ export default NextAuth({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       scope: "read:user",
-    }),
+    }), 
   ],
   callbacks: {
     async session(session: Session) {
